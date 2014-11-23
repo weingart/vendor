@@ -23,23 +23,6 @@ something like:
 		})
 	}
 
-Within 'package main', the following snippet or something like it can be
-used.
-
-	package main
-
-	import "github.com/weingart/vendor"
-
-	var BuildRepo string = "<somerepo>"
-	var BuildSHA string = "<unknown>"
-
-	func init() {
-		vendor.AddBuild(&vendor.Info{
-			"repo": BuildRepo,
-			"sha":  BuildSHA,
-		})
-	}
-
 Within the packe github.com/weingart/vendor, there are variables that can
 set during the build via the -ldflags flags.  These variables can be
 overridden using something like:
