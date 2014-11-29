@@ -28,7 +28,7 @@ set during the build via the -ldflags flags.  These variables can be
 overridden using something like:
 
 	SHA=$(git rev-parse HEAD)
-	go install -ldflags "-X github.com/weingart/vendor.buildSHA ${SHA}" example
+	go install -a -ldflags "-X github.com/weingart/vendor.buildSHA ${SHA}" example
 
 The following variables are available to be set:
 
