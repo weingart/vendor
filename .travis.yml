@@ -1,4 +1,17 @@
 language: go
 go:
-  - 1.8
+  - 1.8.x
   - tip
+
+install:
+  - go get -t -v ./...
+  - go get github.com/alecthomas/gometalinter
+  - gometalinter -i -u
+
+script:
+  - go test -v ./...
+  - go test -race ./...
+  - gometalinter --errors ./...
+
+notifications:
+  email: false
